@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chrome Extension</title>
+    <style>
+        html {
+            font-family: "sans-serif";
+            box-sizing: border-box;
+            width: 500px;
+            height: 500px;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Chrome Extension Demo</h2>
+    <label for="idInput">
+        ID
+        <input id="idInput" type="number" min="1" max="9" value="1" />
+    </label>
+    <button id="getDataBtn">Get Data</button>
+    <p id="result"></p>
+    <!-- <script src="background.js"></script> -->
+    <script src="popup.js"></script>
+</body>
+
+</html>
