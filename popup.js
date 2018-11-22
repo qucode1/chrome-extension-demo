@@ -9,15 +9,31 @@ getDataBtn.addEventListener("click", () => {
     }
   }
 
-  chrome.runtime.sendMessage(
-    {
-      type: "ID",
-      ID: `${idInput.value}`
-    },
-    function(response) {
-      console.log("response data:");
-      console.log(response);
-      handleResponse(response);
-    }
-  );
+  // chrome.runtime.sendMessage(
+  //   {
+  //     type: "ID",
+  //     ID: `${idInput.value}`
+  //   },
+  //   function (response) {
+  //     console.log("response data:");
+  //     console.log(response);
+  //     handleResponse(response);
+  //   }
+  // )
+  const sendMessage = new Promise((resolve, reject) => {
+    chrome.runtime.sendMessage(
+      {
+        type: "ID",
+        ID: `${idInput.value}`
+      },
+      res => {
+        resolve(res);
+      }
+    );
+  });
+  sendMessage.then(res => {
+    console.log("res");
+    console.log(res);
+    handleResponse(res);
+  });
 });
